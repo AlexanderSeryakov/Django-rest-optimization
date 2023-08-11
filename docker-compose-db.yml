@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  postgres:
+    restart: always
+    image: postgres:14.6-alpine
+    environment:
+      - POSTGRES_DB=rest_db
+      - POSTGRES_USER=rest_user
+      - POSTGRES_PASSWORD=pass
+    volumes:
+      - ./db_data:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "sh -c 'pg_isready -U rest_user -d rest_db'" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
