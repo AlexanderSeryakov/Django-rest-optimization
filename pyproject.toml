@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "rest-api"
+version = "0.1.0"
+description = "REST API on DRF"
+authors = ["Alexander Seryakov <seryakov78116@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "4.1"
+psycopg2 = "^2.9.7"
+celery = {extras = ["redis"], version = "^5.3.1"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
