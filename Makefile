@@ -1,4 +1,6 @@
 up-dev_app:
-	docker-compose -f docker-compose-dev.yml up
+	docker-compose up
 down-dev_app:
-	docker-compose -f docker-compose-dev.yml down
+	docker-compose down
+harddown-dev-app:
+	docker system prune -a -f
